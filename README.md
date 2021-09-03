@@ -1,24 +1,26 @@
-# README
+# Proposal
+### WHAT WE NEED FROM YOU
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Community
+	* Describe who the stakeholders involved are and why you chose this group of people to help.
 
-Things you may want to cover:
+2. Problem
+	* Describe the situation of the community and why it needs to be solved.
 
-* Ruby version
+3. Solution
+	* What it is, how it works and what inspired you to create it. Clearly describe how technology is central to your idea and how it solves the problem you've chosen.
 
-* System dependencies
+## Criteria
+### WHAT WE'RE LOOKING FOR
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. How well the student addressed his/her own problem.
+2. Creativity and originality of the proposed solution.
+3. Feasibility and potential impact of the solution.
+4. Quality of design
+5. The appplication should have the following
+	- Connected to a third-party API
+	- Unit test
+	- Deployed to Heroku (or any cloud platform)
+	- Authenication
+	- Database	
+	- READ ME (About the Project, how to setup etc...)
