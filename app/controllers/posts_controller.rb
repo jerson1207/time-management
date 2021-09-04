@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
+  
+
   end
 
   def new
@@ -12,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to @post, notice: "Your post was created successfully"
+        redirect_to @post, notice: "Your post was created successfully"
     else
       render :new
     end
@@ -29,12 +31,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
+  def show    
   end
 
   def destroy
     @post.delete
-    redirect_to posts_path, notice: 'Your post was deleted successfully'
+    redirect_to posts_path, alert: 'Your post was deleted successfully'
 	end
 
   private
