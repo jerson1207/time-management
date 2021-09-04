@@ -11,12 +11,10 @@
       <li class="nav-item <%= active?(posts_path)%>">
         <%= link_to "Post", posts_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item <%= active?(new_post_path)%>">
+        <%= link_to "Create", new_post_path, id: 'new_post_from_nav', class: "nav-link" %>
+      </li>
 
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
     </ul>
 
   <ul class="dropdown my-2 my-lg-0">
