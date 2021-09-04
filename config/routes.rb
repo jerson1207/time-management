@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :posts
+  devise_for :users, skip: [:registrations]
   root to: 'page#homepage'
-  devise_for :users
 end
