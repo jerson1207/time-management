@@ -23,7 +23,6 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     user
-    id
     date
     body
   ].freeze
