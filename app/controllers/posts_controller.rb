@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
-    @posts = Post.all
-  
-
+    # @posts = current_user.posts 
+    @posts = Post.posts_by current_user
   end
 
   def new
@@ -21,9 +20,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
     if @post.update(post_params)
       redirect_to @post, notice: "your post was created successfully"
     else
