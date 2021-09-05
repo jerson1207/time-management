@@ -18,5 +18,9 @@
       <%= f.text_area :body, class: "custom-text-area form-control" %>
     </div>
   </div>
+
+  <%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
+
+
   <%= f.submit 'Save', class: 'btn btn-primary' %>
 <% end %>

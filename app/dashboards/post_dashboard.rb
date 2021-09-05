@@ -14,6 +14,7 @@ class PostDashboard < Administrate::BaseDashboard
     body: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    status: Field::Text,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -23,6 +24,7 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     user
+    status
     date
     body
   ].freeze
@@ -31,6 +33,7 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     user
+    status
     id
     date
     body
