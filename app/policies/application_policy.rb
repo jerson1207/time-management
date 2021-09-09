@@ -35,12 +35,18 @@ class ApplicationPolicy
   def destroy?
     false
   end
+  
+  def admin_types
+    ['AdminUser']
+  end
 
   class Scope
     def initialize(user, scope)
       @user = user
       @scope = scope
     end
+
+
 
     def resolve
       scope.all

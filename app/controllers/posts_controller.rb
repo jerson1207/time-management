@@ -1,9 +1,15 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :approve]
   def index
     # @posts = current_user.posts 
-    @posts = Post.posts_by current_user
+    @posts = Post.posts_by(current_user).order(created_at: :desc)
   end
+
+  def approve
+		authorize @post
+		@post.approved!
+		redirect_to root_path, notice: "The post has been approved"
+	end 
 
   def new
     @post = Post.new
@@ -13,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-        redirect_to @post, notice: "Your post was created successfully"
+        redirect_to posts_path, notice: "Your post was created successfully"
     else
       render :new
     end
@@ -26,7 +32,7 @@ class PostsController < ApplicationController
   def update
     authorize @post
     if @post.update(post_params)
-      redirect_to @post, notice: "your post was created successfully"
+      redirect_to audit_logs_path, notice: "your post was edited successfully"
     else
       render :edit
     end
@@ -43,7 +49,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :body, :status)
+    params.require(:post).permit(:date, :body, :status, :request)
   end
 
   def set_post

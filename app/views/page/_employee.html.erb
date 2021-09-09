@@ -1,0 +1,15 @@
+<h3 class = "text-center custom-text">Schedule</h3>
+
+
+  <%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_time do |date, meetings| %>
+    <%= date %>
+    <% meetings.each do |meeting| %>
+      <div>
+        <%= meeting.name %> <br>
+        Start: <%= meeting.start_time.strftime("%H:%M") %> <br>
+        End:<%= meeting.end_time.strftime("%H:%M") %>
+      </div>
+    <% end %>
+  <% end %>
+
+

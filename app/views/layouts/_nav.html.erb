@@ -1,21 +1,7 @@
-<div class="log">
-  <h1>Time Tracker</h1>
-</div>
-
-<% if current_user %>
-  <nav class="custom-nav navbar navbar-expand-lg navbar-light bg-light">
+<nav class="custom-nav navbar navbar-expand-lg navbar-light ">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item <%= active?(root_path)%>">
-          <%= link_to "Home", root_path, class: "nav-link " %>
-        </li>
-        <li class="nav-item <%= active?(posts_path)%>">
-          <%= link_to "Post", posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item <%= active?(new_post_path)%>">
-          <%= link_to "Create", new_post_path, id: 'new_post_from_nav', class: "nav-link" %>
-        </li>
-
+        <h1>Time Managent System</h1>
       </ul>
 
     <ul class="dropdown my-2 my-lg-0">
@@ -35,5 +21,30 @@
 
     </div>
   </nav>
+
+<% if current_user %>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <%= link_to "Home", root_path, class: "nav-link #{active?(root_path)}" %>
+    </li>
+    
+    <%= render 'layouts/employee_nav_items' unless admin? %>
+    
+    <%= render 'layouts/audit_log_tab' if admin? %>
+  </ul>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
