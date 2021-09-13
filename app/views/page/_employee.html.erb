@@ -1,15 +1,24 @@
 <h3 class = "text-center custom-text">Schedule</h3>
 
-
-  <%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_time do |date, meetings| %>
-    <%= date %>
-    <% meetings.each do |meeting| %>
-      <div>
-        <%= meeting.name %> <br>
-        Start: <%= meeting.start_time.strftime("%H:%M") %> <br>
-        End:<%= meeting.end_time.strftime("%H:%M") %>
-      </div>
-    <% end %>
+<%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_time do |date, meetings| %>
+  <p class="text-right"><%= date.day %></p>
+  <% meetings.each do |meeting| %>
+      <p class="text-left">
+        <%= meeting.name.upcase %>: 
+        <%= meeting.start_time.strftime("%I:%M %p") %> <span> - </span>
+        <%= meeting.end_time.strftime("%I:%M %p") %>
+      </p>
   <% end %>
+<% end %>
 
-
+# include MD5 gem, should be part of standard ruby install
+require 'digest/md5'
+ email = "jersonjabatstuden@gmail.com"
+# get the email from URL-parameters or what have you and make lowercase
+email_address = params[:email].downcase
+ 
+# create the md5 hash
+hash = Digest::MD5.hexdigest(email_address)
+ 
+# compile URL which can be used in <img src="RIGHT_HERE"...
+image_src = "https://www.gravatar.com/avatar/#{hash}"

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class AdminUserDashboard < Administrate::BaseDashboard
+class MeetingDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,16 +8,11 @@ class AdminUserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    posts: Field::HasMany,
+    user: Field::BelongsTo,
     id: Field::Number,
-    email: Field::String,
-    password: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
-    first_name: Field::String,
-    last_name: Field::String,
-    type: Field::String,
+    name: Field::Text,
+    start_time: Field::DateTime,
+    end_time: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -28,25 +23,19 @@ class AdminUserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    type
-    first_name
-    last_name  
-    email
+    user
+    name
+    start_time
+    end_time
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    posts
-    id
-    email
-    password
-    reset_password_token
-    reset_password_sent_at
-    remember_created_at
-    first_name
-    last_name
-    type
+    user
+    name
+    start_time
+    end_time
     created_at
     updated_at
   ].freeze
@@ -55,11 +44,10 @@ class AdminUserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    email
-    password
-    first_name
-    last_name
-    type
+    user
+    name
+    start_time
+    end_time
   ].freeze
 
   # COLLECTION_FILTERS
@@ -74,10 +62,10 @@ class AdminUserDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how admin users are displayed
+  # Overwrite this method to customize how posts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(admin_user)
-  #   "AdminUser ##{admin_user.id}"
+  # def display_resource(post)
+  #   "Post ##{post.id}"
   # end
 end

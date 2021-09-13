@@ -15,8 +15,10 @@
     <div class="row">
       <div class="col-md-12">
        <%= render 'layouts/flash_message' %>
-       <%= render 'layouts/nav' %>
-        <%= yield %>  
+       <% if current_user %>
+         <%= render 'layouts/nav' %>
+       <% end %>
+      <%= yield %>  
       </div>
     </div>
   </div>

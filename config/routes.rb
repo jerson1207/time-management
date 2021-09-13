@@ -3,12 +3,11 @@ Rails.application.routes.draw do
   resources :schedules
   resources :audit_logs, except: [:new, :edit, :destory]
   
-  
   namespace :admin do
-    resources :users
     resources :admin_users
+    resources :users
     resources :posts
-
+    resources :meetings
     root to: "users#index"
   end
 
@@ -17,7 +16,6 @@ Rails.application.routes.draw do
       get :approve
     end
   end
-
 
   devise_for :users, skip: [:registrations]
   root to: 'page#homepage'

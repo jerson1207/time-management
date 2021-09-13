@@ -381,7 +381,7 @@ module ActiveSupport
       end
 
       # Applies inflection rules for +singularize+ and +pluralize+.
-      #
+      #b
       # If passed an optional +locale+ parameter, the uncountables will be
       # found for that locale.
       #

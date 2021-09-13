@@ -1,21 +1,43 @@
+AdminUser.create( email: "admin@test.com",  
+        password: "123456", 
+        password_confirmation: "123456", 
+        first_name: "Boss", 
+         last_name: "Chief" )
+puts "1st admin created"
+
 @user1 = User.create( email: "user1@test.com", 
-                      password: "123456",         
-                      password_confirmation: "123456", 
-                      first_name: "Juan", 
-                      last_name: "Tester" )
+        password: "123456",         
+        password_confirmation: "123456", 
+        first_name: "Lisa", 
+        last_name: "Black" )
+puts "1st user created"
 
-puts "1 user created"
-
-AdminUser.create( email: "admin1@test.com",  
-                  password: "123456", 
-                  password_confirmation: "123456", 
-                  first_name: "Boss", 
-                  last_name: "Chief" )
-
-puts "1 admin created"
-10.times do |post|
-	Post.create!(date: Date.today, body: "#{post} work_performed content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user_id: @user1.id, request: 12.5)
+5.times do |post|
+	Post.create!(date: Date.today + post, body: "#{post} Overtime request", user_id: @user1.id, request: 2)
 end
+puts "5 Posts from user1 have been created"  
 
-puts "10 Posts have been created"  
+@user2 = User.create( email: "user2@test.com", 
+        password: "123456",         
+        password_confirmation: "123456", 
+        first_name: "James", 
+        last_name: "Bond" )
+puts "2st user created"
+
+5.times do |post|
+	Post.create!(date: Date.today + post, body: "#{post} Overtime request", user_id: @user2.id, request: 2)
+end
+puts "5 Posts from user1 have been created"  
+
+
+User.create( email: "juantest10@gmail.com", 
+        password: "qwerty@1",         
+        password_confirmation: "qwerty@1", 
+        first_name: "Juan", 
+        last_name: "Tester" )
+puts "3rd user created"
+
+
+
+
 

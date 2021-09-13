@@ -7,7 +7,6 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
-
     def authenticate_admin
       unless current_user.try(:type) == 'AdminUser'
         flash[:aler] = "You are not authorized to access this page."
