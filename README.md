@@ -13,3 +13,9 @@
 ![alt text](https://github.com/jerson1207/avion_finalProject/blob/main/app/assets/images/request%20log.png)
 ### Request overtime -> allow user to request overtime
 ![alt text](https://github.com/jerson1207/avion_finalProject/blob/main/app/assets/images/request%20overtime.png)
+### website overview | Admin
+
+![alt text](https://github.com/jerson1207/avion_finalProject/blob/main/app/assets/images/admin%20home.png)
+
+
+![alt text](https://github.com/jerson1207/avion_finalProject/blob/main/app/assets/images/overtime%20log.png)
