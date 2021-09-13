@@ -6,9 +6,10 @@
 #
 ### website overview | USER
 ### log in page -> Allow user to login user the email provided by admin. 
-
+![alt text](http://url/to/img.png)
 ### Home page -> User can view Schedule provided by admin
-
+![alt text](http://url/to/img.png)
 ### Request Log -> Where user can view the log requested
-
+![alt text](http://url/to/img.png)
 ### Request overtime -> allow user to request overtime
+![alt text](http://url/to/img.png)
