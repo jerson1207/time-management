@@ -1,5 +1,3 @@
-<h3 class = "text-center custom-text">Schedule</h3>
-
 <%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_time do |date, meetings| %>
   <p class="text-right"><%= date.day %></p>
   <% meetings.each do |meeting| %>
