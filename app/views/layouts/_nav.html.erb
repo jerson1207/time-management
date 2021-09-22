@@ -12,7 +12,7 @@
         <%= current_user.full_name %>
         <hr>
         <% if current_user.try(:type) == 'AdminUser' %>
-          <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
+          <%= link_to "Advance View", admin_root_path, class: "dropdown-item" %>
         <hr>
         <% end %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
